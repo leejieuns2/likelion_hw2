@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+  <center>
+      <p class="result-text">당신이 입력한 텍스트는 <span class="badge badge-secondary">{{total}}</span> 으로 구성되어 있습니다.</p>
+      <br>
+      <div class="card" style="width: 70%">
+        <!-- 입력받은 전체 텍스트 -->
+        <span class="card-header">
+              입력한 텍스트
+        </span>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{full}}</li>
+        </ul>
+      </div>
+      <br>
+      <div class="card" style="width: 70%">
+        <span class="card-header">
+            단어 카운트
+        </span>
+        <ul class="list-group list-group-flush">
+          <!-- '단어' : '단어가 나온 횟수' -->
+          {% for word, howmany in dictionary %}
+          <li class="list-group-item">{{word}} : {{howmany}}</li>
+          {%endfor%}
+        </ul>
+      </div>
+      <br>
+      <a href="{%url 'home'%}" class="btn-text">다시하기</a>
+      <br><br>
+    </center>
+{% endblock %}

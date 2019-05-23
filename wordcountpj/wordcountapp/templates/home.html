@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <form action="{%url 'result'%}">
+        <div class="form-group" style="width: 70%">
+            <label for="exampleFormControlTextarea1" class="home-text">★★★ Enter the text ★★★</label>
+                <textarea class="form-control" id="fulltext" rows="10" cols="70" name="fulltext"></textarea>
+                <br>
+                <button type="submit" class="btn btn-secondary btn-lg">count!</button> 
+        </div>
+    </form>
+</center>
+{% endblock %}
